@@ -129,7 +129,7 @@ while True:
 						
 					elif msg.get("text") == "قوانین":
 						name = bot.getGroupInfo(target)["data"]["group"]["group_title"]
-						bot.sendMessage(target, "🌀 قوانین گروه {name} :\n\n⛔️ ارسال لینک ممنوع!\n⛔️ ارسال فحش ممنوع!\n⛔️ توهین به کسی ممنوع!\n⛔️ارسال از کانال (فروارد) ممنوع!", message_id=msg.get("message_id"))
+						bot.sendMessage(target, f"🌀 قوانین گروه {name} :\n\n⛔️ ارسال لینک ممنوع!\n⛔️ ارسال فحش ممنوع!\n⛔️ توهین به کسی ممنوع!\n⛔️ارسال از کانال (فروارد) ممنوع!", message_id=msg.get("message_id"))
 							
 					elif msg.get("text").startswith("ربات"):
 						bot.sendMessage(target, "جــونـم😁💋", message_id=msg.get("message_id"))
@@ -343,7 +343,7 @@ while True:
 
 
 					elif msg.get("text") == "بستن گروه" and msg.get("author_object_guid") in admins :
-						print(bot.setMembersAccess(target, ["ViewMembers","ViewAdmins","AddMember"]).text)
+						bot.setMembersAccess(target, ["ViewMembers","ViewAdmins","AddMember"])
 						bot.sendMessage(target, "گروه بسته شد!", message_id=msg.get("message_id"))
 
 					elif msg.get("text") == "باز کردن گروه" and msg.get("author_object_guid") in admins :
